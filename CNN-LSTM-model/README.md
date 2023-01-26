@@ -1,10 +1,10 @@
-﻿Problem Specification
+**Problem Specification**
 
 Every day, Spotify uploads more than 60,000 songs, meaning every 1.4 seconds, a song is released on Spotify [(Benitez, 2022)](https://www.zotero.org/google-docs/?FfppUW). Music releasers use genre as a predictor to recommend users new songs, and such genre song classification is an essential task for such recommendation machines. However, audio data is complex, and many audio features/hidden correlations could classify song genres.
 
 To solve this classification problem, I will create a hybrid convolutional neural network-long short-term memory (CNN-LSTM) network that classifies music genres. I will compare this with the baseline model of CNN to see whether adding LSTM aids in classification accuracy. The subset in this analysis contains four genres (Pop, Electronic, Rock, Folk), each with 500 tracks.
 
-Data pre-processing
+**Data pre-processing**
 
 I will be using the FMA dataset [(Defferrard, 2016/2022)](https://www.zotero.org/google-docs/?MI66os), which has more than 100,000 audio tracks available with its metadata. The FMA dataset is chosen because it provides sufficient metadata that is easily accessible and has a diverse amount of categories compared to the standard GTZAN dataset.
 
@@ -82,11 +82,11 @@ Testing and Analysis
 
 The code for this is attached in the appendix to this PDF. We trained both the CNN and CNN-LSTM models for 30 epochs and computed the loss, classification accuracy, precision, recall and F1 score for both models.
 
-CNN model
+**CNN model**
 
 ![](Aspose.Words.6e185753-69a2-4ee5-8ee3-3d316444610c.008.jpeg)
 
-CNN-LSTM model
+**CNN-LSTM model**
 
 ![](Aspose.Words.6e185753-69a2-4ee5-8ee3-3d316444610c.009.jpeg)
 
@@ -102,13 +102,13 @@ We see that the CNN model has a lower training and testing accuracy than the CNN
 |**F1 Score**|0.508416|0.696915|
 From the statistics above, it is seen that the CNN-LSTM model has the best classification accuracy for testing dataset comparing to CNN, along with Precision, Recall and F1 Score. Hence, the CNN-LSTM model is considered the best compared to its base model. CNN-LSTM improved from CNN [(Brownlee, 2022)](https://www.zotero.org/google-docs/?YmP6L3).
 
-Obstacles
+**Obstacles**
 
 I originally planned to process all 8000 audios of 8 different genres for building this Neural Network. However, it requires a lot of computer processing time and the laptop used in this study requires more than 12 hours to process everything. I cut the number of audio to 2000, with 500 audio clips for four different genres, which would still take 2.5 hours.
 
 To resolve this problem, I decided to break the problem down into two parts. I uploaded it onto google collab to use a GPU hardware accelerator for quicker processing. At the same time, I used a smaller subset of the processed audio (MFCC) to test the neural network.
 
-References
+**References**
 
 [Benitez, C. (2022, May 13). *20 Spotify Statistics 2022: Usage, Revenue & More*. Tone Island.](https://www.zotero.org/google-docs/?3Iv7dW)
 
